@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array Display</title>
+</head>
+
+<body>
+    <h2>Array Items</h2>
+
+    <button onclick="showArray()">ShowItems</button>
+
+    <ul id="list"></ul>
+
+    <script>
+        function showArray() {
+            let colours = ["Black", "Pink", "Blue"];
+
+            let output = "";
+
+            for (let i = 0; i < colours.length; i++) {
+                output = output + "<li>" + colours[i] + "</li>";
+            document.getElementById("list").innerHTML = output;
+            }
+        }
+    </script>
+</body>
+
+</html>
