@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form Validation</title>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<form onsubmit="validateLogin(event)">
+    Username: <input type="text" id="username"><br><br>
+    Password: <input type="password" id="password"><br><br>
+
+    <button type="submit">Login</button>
+</form>
+
+<p id="error" style="color:red;"></p>
+
+<script>
+function validateLogin(event) {
+    event.preventDefault(); // stop form submission
+
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var errorMsg = "";
+
+    // Required validation
+    if (username === "" || password === "") {
+        errorMsg = "All fields are required!";
+    }
+    // Minimum length validation
+    else if (username.length < 4) {
+        errorMsg = "Username must be at least 4 characters!";
+    }
+    else if (password.length < 6) {
+        errorMsg = "Password must be at least 6 characters!";
+    }
+    else {
+        errorMsg = "Login successful!";
+    }
+
+    // Show message dynamically
+    document.getElementById("error").innerHTML = errorMsg;
+}
+</script>
+
+</body>
+</html>

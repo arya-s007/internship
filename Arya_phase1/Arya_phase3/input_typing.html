@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Preview</title>
+</head>
+<body>
+
+<input type="text" id="inputBox" placeholder="Type something..." onkeyup="showText()">
+
+<h2 id="preview"></h2>
+
+<script>
+function showText() {
+    var text = document.getElementById("inputBox").value;
+    document.getElementById("preview").innerHTML = text;
+}
+</script>
+
+</body>
+</html>

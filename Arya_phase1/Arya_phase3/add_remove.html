@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add / Remove Elements</title>
+</head>
+
+<body style="font-family: Arial; text-align: center;">
+
+    <h2>Add / Remove Elements</h2>
+
+    <!-- Input box -->
+    <input type="text" id="userInput" placeholder="Enter something">
+
+    <!-- Buttons -->
+    <br><br>
+    <button onclick="addItem()">Add</button>
+    <button onclick="removeItem()">Remove</button>
+
+    <!-- Container -->
+    <div id="container"></div>
+
+    <script>
+        function addItem() {
+            let text = document.getElementById("userInput").value;
+
+            if (text === "") {
+                alert("Please enter something");
+                return;
+            }
+
+            let newElement = document.createElement("div");
+            newElement.innerText = text;
+
+            // Styling (color background)
+            newElement.style.backgroundColor = "lightblue";
+            newElement.style.margin = "10px";
+            newElement.style.padding = "10px";
+            newElement.style.borderRadius = "5px";
+
+            document.getElementById("container").appendChild(newElement);
+
+            // Clear input
+            document.getElementById("userInput").value = "";
+        }
+
+        function removeItem() {
+            let container = document.getElementById("container");
+
+            if (container.lastChild) {
+                container.removeChild(container.lastChild);
+            } else {
+                alert("No elements to remove");
+            }
+        }
+    </script>
+
+</body>
+</html>
